@@ -1,0 +1,10 @@
+campaign,n_spectra,n_samples,dates,material,dose_range,ww_range,has_counts
+C01_2024-01_FORMULATION,656,41,2024-01-16 .. 2024-01-18,formulation (API + MCC/PVP/CaSt/talc/MgSt),400-1200 mg,81.22-92.84 %,656
+C02_2024-04_FORMULATION,336,21,2024-04-04 .. 2024-04-05,formulation (API + MCC/PVP/CaSt/talc/MgSt),550-750 mg,85.60-89.02 %,336
+C03_2025-03-05_FIELD_TEST,520,3,2025-03-05 .. 2025-03-05,formulation (assumed; not documented),550-650 mg,,520
+C05_2025-05_MENDINE_EXP1,454,23,2025-05-09 .. 2025-05-13,binary blend paracetamol + talc (2.00 g); pure paracetamol (LOBA 98%); pure talc,,0.00-100.00 %,344
+C06_2025_MENDINE_EXP2,272,17,2025 (unda .. 2025 (unda,binary blend 2.00 g paracetamol + varied talc,,45.45-55.56 %,272
+C07_2025_MENDINE_SUBSAMPLES,128,8,2025 (unda .. 2025 (unda,binary blend paracetamol + talc (2.00 g),,44.60-45.80 %,128
+C08_2025_IPRS_STANDARD,4,1,2025 (unda .. 2025 (unda,IPRS paracetamol reference standard,,100.00-100.00 %,4
+C09_2026-03_BLEND_CALIBRATION,912,57,2026-03 (u .. 2026-03 (u,binary blend paracetamol + talc (2.00 g),,44.44-54.55 %,0
+C10_2026-03_BLEND_RESCAN_TEST,61,13,2026-03-11 .. 2026-03-11,binary blend paracetamol + talc (2.00 g),,48.19-54.55 %,61

@@ -1,0 +1,59 @@
+{
+  "name": "Paracetamol + talc blend screening model",
+  "version": "1.0.0",
+  "trained": "2026-09-17",
+  "intended_use": "Qualitative screening of paracetamol/talc powder blends into LOW / WITHIN RANGE / HIGH label-claim bands. NOT a replacement for the pharmacopoeial HPLC assay and not for batch release.",
+  "target": "% label claim = paracetamol (g) / 2.00 g x 100 (talc fixed at 2.00 g); 80-120 % = 44.4-54.5 % w/w",
+  "training_data": {
+    "campaigns": [
+      "C05_2025-05_MENDINE_EXP1",
+      "C07_2025_MENDINE_SUBSAMPLES",
+      "C09_2026-03_BLEND_CALIBRATION"
+    ],
+    "n_samples": 82,
+    "n_scans": 1312
+  },
+  "preprocessing": "SNV then Savitzky-Golay 1st derivative (window 15, poly 2)",
+  "estimator": "mean of SVR (C=100, RBF) and random forest (150 trees), trained on individual scans; sample result = median of scans",
+  "bands": {
+    "low_below": 85.0,
+    "within_range": [
+      95.0,
+      105.0
+    ],
+    "high_above": 115.0,
+    "borderline": "within +/-5 of 90 or 110 -> confirm by HPLC"
+  },
+  "applicability_domain": {
+    "pca_components": 10,
+    "t2_limit_p99": 38.761905151307744,
+    "q_limit_p99": 28.790873411522615,
+    "blend_similarity_min": 0.95,
+    "min_fraction_scans_in_domain": 0.5
+  },
+  "validation_5fold_grouped_by_sample": {
+    "R2": 0.83,
+    "RMSE_label_claim": 4.84,
+    "RPD": 2.48,
+    "bias": 0.24,
+    "per_campaign": {
+      "C09": {
+        "R2": 0.79,
+        "RMSE": 5.07
+      },
+      "C05": {
+        "R2": 0.93,
+        "RMSE": 3.23
+      },
+      "C07": {
+        "RMSE": 5.89
+      }
+    }
+  },
+  "known_limits": [
+    "No model transfers between collection years without recalibration (C09<->C05 RMSE 12-13 % LC)",
+    "Re-scans of calibration samples (C10) are not independent preparations",
+    "Reference values are gravimetric (weighed-in), not HPLC",
+    "Excipient system limited to talc; multi-excipient formulations are out of domain"
+  ]
+}
