@@ -1,4 +1,5 @@
 # Paracetamol NIR screening (METASPEQ)
+https://paracetamol-nir-screening-c8appusxrxbjvjyusan8vdf.streamlit.app/#paracetamol-talc-blend-nir-screening
 
 Screening tool for **paracetamol + talc powder blends** (80–120 % label claim) scanned on the METASPEQ
 892–1710 nm NIR module, plus the consolidated master spectra dataset from 2024–2026.
